@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mtg CAMT</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+	<link rel="stylesheet" type="text/css" href="css/style3.css"/>
+  </head>
+  <body>
+    <ul>
+      <div id="marker"></div>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Project</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <script>
+      const marker = document.querySelector('#marker');
+      const item = document.querySelectorAll('ul li a');
+
+      function indicator(e){
+        marker.style.top = e.offsetTop+'px';
+        marker.style.width = e.offsetWidth+'px';
+      }
+
+      item.forEach(Link => {
+        Link.addEventListener('mousemove', (e) => {
+          indicator(e.target);
+        })
+      })
+    </script>
+  </body>
+</html>
